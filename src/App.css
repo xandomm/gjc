@@ -7,7 +7,13 @@
   font-style: #747474;
   color: #747474;;
 }
+#basic-menu {
+  border: none
+}
+.css-1poimk-MuiPaper-root-MuiMenu-paper-MuiPaper-root-MuiPopover-paper {
+  background-color: #7cb8d5 !important;
 
+}
 .form {
   display: flex;
   flex-direction: column;
@@ -22,7 +28,24 @@
 .row {
   margin-top: 20px;
   margin-bottom: -20px;
+  
 }
+.cabeca{
+  display: block;
+  margin-top: 15px;
+  margin-bottom: -20px;
+}
+#tes{
+  
+  margin-top: 30px;
+  margin-bottom: -37px;
+}
+#tes1{
+  margin-top: 25px;
+  margin-bottom: -30px;
+}
+
+
 .input-form{
   display: flex;
   margin: 10px;
@@ -37,6 +60,10 @@
   background-color: #ffffff;
   width: 75vw;
   padding: 10vw;
+}
+.large-input {
+  width: 53.7vw;
+  margin-top: 0;
 }
 #root {
   background-color: #f3f3f3;
@@ -60,9 +87,43 @@
   justify-content: space-around;
 }
 
+.center {
+  display: flex;
+  justify-content: center;
+}
+.submit-button {
+
+  margin-right: 0;
+
+  background-color: #3F8EB5;
+  color: #ffffff;
+  font-weight: 600;
+  font-size: large;
+  border-radius: 4px;
+  padding: 5px 40px 5px 40px ;
+  border: none;
+  box-shadow: #747474;
+}
 .App-link {
   color: #61dafb;
 }
 #menu-item {
-  background-color: #61dafb;;
+  background-color: #7cb8d5;
+  padding: 15px;
+  margin-left: 8px;
+  margin-right: 8px;
+}
+#menu-item:hover{
+  background-color: white;
+}
+.form-check{
+  margin-left: -25px;
+  
+}
+.form-check-label{
+  padding: 7px;
+}
+.check{
+  display: contents;
+
 }

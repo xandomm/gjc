@@ -23,42 +23,40 @@ function App() {
         <h3>Dados pessoais</h3>
         <form onSubmit={handleSubmit(onSubmit)}>
         <FormGroup>
-        <div>
-            <label><b>Nome Completo</b></label>
+            
+         <div>
+            <label className='cabeca'><b>Nome Completo</b></label>
             <div className='row'>
               <input
-          class="input-form col-md-11" 
-          {...register("nome")} 
-          />
+              class="input-form large-input" 
+              {...register("nome")} 
+              />
             </div>
             <br/>      
-          </div>
-            <div className='row'>
+            </div>
+            <div className='row' id='tes'>
               <b className='col-md-7'>
-                cpf
+                CPF
               </b>
               
               <b className='col-md-4 title'>
-              
-                Data de nascimento
+                 Data de nascimento
               </b>
             </div>
             <div class="row">
-
-               
               <input 
-          class="col-md-7 input-form" 
-          {...register("cpf")} 
-          />
-          <input 
-          class="col-md-4 input-form" 
-          type="date" 
-          {...register("dataNascimento")} 
-          />
+                class="col-md-7 input-form" 
+                {...register("cpf")} 
+              />
+              <input 
+                class="col-md-4 input-form" 
+                type="date" 
+                {...register("dataNascimento")} 
+              />
 
           
             </div>
-            <div className='row'>
+            <div className='row' id='tes1'>
               <b className='col-md-7'>
                 Telefone celular
               </b>
@@ -70,42 +68,45 @@ function App() {
             <div class="row">
 
               <input 
-          class="col-md-7 input-form" 
-          type='tel'
-          {...register("celular")} 
-          />
-          <input 
-          class="col-md-4 input-form" 
-          type="tel" 
-          {...register("telFixo" )} 
-          />
-
+                class="col-md-7 input-form" 
+                type='tel'
+                {...register("celular")} 
+              />
+              <input 
+                class="col-md-4 input-form" 
+                type="tel" 
+                {...register("telFixo" )} 
+              />
           
             </div>
             <div className='row'>
-            <label><b>E-mail</b></label>
+              <label><b>E-mail</b></label>
             </div>
             <div className='row'>
               <input
-              class="input-form col-md-11" 
-         
-              {...register("email")} 
+                class="input-form large-input" 
+          
+                {...register("email")} 
               />
             </div>
-            <br/>          <br/>
+            <br/>         
+            <br/>
 
             <div className="form-group form-check">
-              <input name="acceptTerms" type="checkbox" {...register('acceptTerms')} id="acceptTerms" />
+              <div className='check'>
+                <input  name="acceptTerms" type="checkbox" {...register('acceptTerms')} id="acceptTerms" />
+              </div>
+              
               <label htmlFor="acceptTerms" className="form-check-label">Quero receber alertas, promoções e novidades por email</label>
             </div>
 
             <FileInput
-      accept="image/png, image/jpg, image/jpeg, image/pdf"
-      multiple
-      name="O logotipo será impresso quando optar por ADICIONAR LOGO"
-      mode="append"
-    />
-      
+              accept="image/png, image/jpg, image/jpeg, image/pdf"
+              multiple
+              name="O logotipo será impresso quando optar por ADICIONAR LOGO"
+              mode="append"
+            />
+              
           </FormGroup>
           
           <div className='row'>
@@ -120,15 +121,15 @@ function App() {
             <div class="row">
 
               <input 
-          class="col-md-4 input-form" 
-          type='tel'
-          {...register("cep")} 
-          />
-          <input 
-          class="col-md-7 input-form" 
-          type="tel" 
-          {...register("rua" )} 
-          />
+                class="col-md-4 input-form" 
+                type='tel'
+                {...register("cep")} 
+              />
+              <input 
+                class="col-md-7 input-form" 
+                type="tel" 
+                {...register("rua" )} 
+              />
 
           
             </div>
@@ -143,27 +144,25 @@ function App() {
                 Bairro
               </b>
             </div>
+
             <div class="row">
-
               <input 
-          class="col-md-4 input-form" 
-          type='tel'
-          {...register("numero")} 
-          />
-          <input 
-          class="col-md-7 input-form" 
-          type="tel" 
-          {...register("bairro")} 
-          />
+                class="col-md-4 input-form" 
+                type='tel'
+                {...register("numero")} 
+              />
+              <input 
+                class="col-md-7 input-form" 
+                type="tel" 
+                {...register("bairro")} 
+              />
 
-          
             </div>
             <br/>
             <div className='row'>
               <b className='col-md-7'>
                 Cidade
               </b>
-              
               <b className='col-md-4 title'>
                 Estado
               </b>
@@ -171,15 +170,15 @@ function App() {
             <div class="row">
 
               <input 
-          class="col-md-7 input-form" 
+                class="col-md-7 input-form" 
 
-          {...register("cidade")} 
-          />
-          <input 
-          class="col-md-4 input-form" 
+                {...register("cidade")} 
+              />
+              <input 
+                class="col-md-4 input-form" 
 
-          {...register("estado" )} 
-          />
+                {...register("estado" )} 
+              />
 
           
             </div>
@@ -191,10 +190,15 @@ function App() {
             <br/>
             <br/>
             <br/>
-            <input 
-          
-          type="submit" 
-          />
+            <div className='center'>
+            <button
+            className='submit-button'
+            type="submit" 
+            >
+            Editar dados
+            </button>
+            </div>
+            
         </form>
       </div>
       <Header />

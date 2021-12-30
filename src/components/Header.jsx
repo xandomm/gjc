@@ -43,7 +43,7 @@ export default function Header() {
 
             </svg>
       </Button>
-      <Menu
+      <Menu 
         id="basic-menu"
         anchorEl={anchorEl}
         open={open}
@@ -52,7 +52,7 @@ export default function Header() {
           'aria-labelledby': 'basic-button',
         }}
       >
-        <MenuItem>Olá Renata</MenuItem>
+        <MenuItem id="menu-item">Olá Renata</MenuItem>
         <MenuItem id="menu-item" onClick={handleClose}>Dados do usuário</MenuItem>
         <MenuItem id="menu-item" onClick={handleClose}>Criar anúncio</MenuItem>
         <MenuItem id="menu-item" onClick={handleClose}>Carrinho</MenuItem>

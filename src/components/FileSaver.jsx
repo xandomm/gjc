@@ -1,3 +1,4 @@
+import axios from "axios";
 import React, { useCallback, useEffect } from "react";
 import { useDropzone } from "react-dropzone";
 import { useForm } from "react-hook-form";
@@ -16,6 +17,7 @@ const FileInput = (props) => {
       if (mode === "append") {
         newFiles = newFiles.reduce((prev, file) => {
           const fo = Object.entries(file);
+          
           if (
             prev.find((e) => {
               const eo = Object.entries(e);
@@ -24,7 +26,9 @@ const FileInput = (props) => {
                   key === fo[index][0] && value === fo[index][1]
               );
             })
-          ) {
+          )
+
+           {
             return prev;
           } else {
             return [...prev, file];
@@ -47,6 +51,26 @@ const FileInput = (props) => {
       unregister(name);
     };
   }, [register, unregister, name]);
+  useEffect(() => {
+
+    if (files) {
+  
+      let formData = new FormData();
+      formData.append('file', files[0]);
+console.log(formData)
+       axios.post('http://localhost:8080/upload', formData, {
+      headers: {
+        "Content-Type": "multipart/form-data"
+      }
+
+    }).then(()=>{
+      window.alert('imagem enviada')
+    }).catch(err=> console.log(err))
+
+  }
+
+    }
+, [files]);
 
   return (
     <div>
@@ -68,6 +92,7 @@ const FileInput = (props) => {
           className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
           id={name}
           placeholder="Arraste sua imagem até aqui"
+          type="file"
           {...getInputProps()}
         />
 
